@@ -54,7 +54,7 @@ def get_cards_with_set(
 def get_cards_with_set_rarity(
         url: str = None,
         path: str = None,
-):
+) -> Dict[str, Dict[str, List]]:
     data = get_cards_with_set(url=url, path=path)
 
     result = dict()
@@ -67,7 +67,7 @@ def get_cards_with_set_rarity(
 def get_cards_ktk_with_colors(
         url: str = None,
         path: str = None,
-):
+) -> List:
     data = __get_cards(url=url, path=path)
 
     return [d for d in data if d['set'].lower() == 'ktk' and all(x in d['colors'] for x in ['Red', 'Blue'])]

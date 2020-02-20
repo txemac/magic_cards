@@ -44,21 +44,14 @@ pip install -r requiremets.txt
 # Test
 In the environment
 ```shell script
-python -m pytest
+py.test -vvv
 ```
 
 # Run
 * List of cards grouped by set:
 ```shell script
-python -m main --by_set
+python main.py
 ```
 
-* List of cards grouped by set and rarity:
-```shell script
-python -m main --by_rarity
-```
-
-* List of cards from KTK with colours:
-```shell script
-python -m main --ktk_red_blue
-```
+And select the option 'a', 'b' or 'c'.
+Select m if you want see the total result.

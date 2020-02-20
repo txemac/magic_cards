@@ -7,7 +7,7 @@ from src import cards
 @pytest.mark.skip
 def test_get_cards():
     data1 = MagicTheGatheringAPIClient.get_cards(url='https://api.magicthegathering.io/v1/cards')
-    data2 = cards.__get_cards(path='../data/get_cards.py')
+    data2 = cards.__get_cards(path='get_cards.txt')
     assert data1 == data2
 
 
@@ -29,7 +29,7 @@ def test_group_by_key_rarity(data_example):
 
 
 def test_get_cards_with_set():
-    result = cards.get_cards_with_set(path='../data/get_cards_test.py')
+    result = cards.get_cards_with_set()
     assert len(result) == 2
     assert list(result.keys()) == ['10E', 'KTK']
     assert isinstance(result['10E'], list)
@@ -41,7 +41,7 @@ def test_get_cards_with_set():
 
 
 def test_get_cards_with_set_rarity():
-    result = cards.get_cards_with_set_rarity(path='../data/get_cards_test.py')
+    result = cards.get_cards_with_set_rarity()
     assert len(result) == 2
     assert list(result.keys()) == ['10E', 'KTK']
     assert len(result['10E']) == 2
@@ -57,6 +57,6 @@ def test_get_cards_with_set_rarity():
 
 
 def test_get_cards_ktk_with_colors():
-    result = cards.get_cards_ktk_with_colors(path='../data/get_cards_test.py')
+    result = cards.get_cards_ktk_with_colors()
     assert len(result) == 1
     assert result[0]['name'] == 'Bear\'s Companion'
