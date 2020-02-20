@@ -30,3 +30,25 @@ Using **only** the https://api.magicthegathering.io/v1/cards endpoint from the M
 * Using only the programming language's standard library.
 * **Parallelising** the retrieval of all the **Cards**  to speed up things.
 * Respecting the API's Rate Limiting facilities.
+
+
+# Environment
+Python >= 3.8
+* At root folder: create environment, activate and install requirements.
+```shell script
+virtualenv env
+source env/bin/activate
+pip install -r requiremets.txt
+```
+
+# Test
+In the environment
+```shell script
+python -m pytest
+```
+
+# Run
+* List of cards grouped by set:
+```shell script
+python -m main --by_set
+```
