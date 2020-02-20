@@ -57,3 +57,8 @@ python -m main --by_set
 ```shell script
 python -m main --by_rarity
 ```
+
+* List of cards from KTK with colours:
+```shell script
+python -m main --ktk_red_blue
+```

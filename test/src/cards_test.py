@@ -44,6 +44,8 @@ def test_get_cards_with_set_rarity():
     result = cards.get_cards_with_set_rarity(path='../data/get_cards_test.py')
     assert len(result) == 2
     assert list(result.keys()) == ['10E', 'KTK']
+    assert len(result['10E']) == 2
+    assert len(result['KTK']) == 2
     assert isinstance(result['10E'], dict)
     assert isinstance(result['KTK'], dict)
     assert list(result['10E'].keys()) == ['Rare', 'Uncommon']
@@ -52,3 +54,9 @@ def test_get_cards_with_set_rarity():
     assert result['10E']['Uncommon'][0]['name'] == 'Academy Researchers'
     assert result['KTK']['Rare'][0]['name'] == 'Avalanche Tusker'
     assert result['KTK']['Uncommon'][0]['name'] == 'Bear\'s Companion'
+
+
+def test_get_cards_ktk_with_colors():
+    result = cards.get_cards_ktk_with_colors(path='../data/get_cards_test.py')
+    assert len(result) == 1
+    assert result[0]['name'] == 'Bear\'s Companion'

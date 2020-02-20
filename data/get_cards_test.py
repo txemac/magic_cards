@@ -284,7 +284,6 @@
             "cmc": 5.0,
             "colors": [
                 "Green",
-                "Red",
                 "Blue"
             ],
             "colorIdentity": [
