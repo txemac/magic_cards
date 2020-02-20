@@ -23,11 +23,21 @@ def __group_by_key(
 
 
 def get_cards_with_set() -> Dict[str, List]:
+    """
+    Get cards grouped by set.
+
+    :return Dict: groups
+    """
     data = MagicTheGatheringAPIClient.get_cards()
     return __group_by_key(data=data.get('cards'), key='set')
 
 
 def get_cards_with_set_rarity() -> Dict[str, Dict[str, List]]:
+    """
+    Get cards grouped by set and rarity.
+
+    :return Dict: groups
+    """
     data = get_cards_with_set()
 
     result = dict()
@@ -38,6 +48,11 @@ def get_cards_with_set_rarity() -> Dict[str, Dict[str, List]]:
 
 
 def get_cards_ktk_with_colors() -> List:
+    """
+    Get cards filters by set TKT and with colors Blue and Red.
+
+    :return Dict: groups
+    """
     data = MagicTheGatheringAPIClient.get_cards()
 
     return [d for d in data.get('cards')
