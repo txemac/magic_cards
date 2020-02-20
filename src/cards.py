@@ -49,3 +49,16 @@ def get_cards_with_set(
     data = __get_cards(url=url, path=path)
     data = data.get('cards')
     return __group_by_key(data=data, key='set')
+
+
+def get_cards_with_set_rarity(
+        url: str = None,
+        path: str = None,
+):
+    data = get_cards_with_set(url=url, path=path)
+
+    result = dict()
+    for key in data.keys():
+        result[key] = __group_by_key(data=data[key], key='rarity')
+
+    return result

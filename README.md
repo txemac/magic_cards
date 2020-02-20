@@ -52,3 +52,8 @@ python -m pytest
 ```shell script
 python -m main --by_set
 ```
+
+* List of cards grouped by set and rarity:
+```shell script
+python -m main --by_rarity
+```
